@@ -1,0 +1,17 @@
+[package]
+name = "yatfm"
+version = "0.1.0"
+edition = "2021"
+description = "Yet Another Terminal File Manager: the file manager with no bullshit."
+license = "MIT"
+
+[dependencies]
+anyhow = "1"
+open = "5"        # opens files with xdg-open
+ratatui = "0.29"  # terminal UI (re-exports crossterm)
+trash = "5"       # freedesktop.org trash: delete safely, restore on undo
+
+[profile.release]
+lto = true
+strip = true
+codegen-units = 1
